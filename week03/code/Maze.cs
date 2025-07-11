@@ -32,7 +32,21 @@ public class Maze
     /// </summary>
     public void MoveLeft()
     {
-        // FILL IN CODE
+        if (_mazeMap.TryGetValue((_currX, _currY), out var directions))
+        {
+            if (directions[0]) // left is the first direction in the array
+            {
+                _currX--; // move left
+            }
+            else
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+        }
+        else
+        {
+            throw new InvalidOperationException("Invalid location!");
+        }
     }
 
     /// <summary>
@@ -41,7 +55,21 @@ public class Maze
     /// </summary>
     public void MoveRight()
     {
-        // FILL IN CODE
+        if (_mazeMap.TryGetValue((_currX, _currY), out var directions))
+        {
+            if (directions[1]) // right is the second direction in the array
+            {
+                _currX++; // move right
+            }
+            else
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+        }
+        else
+        {
+            throw new InvalidOperationException("Invalid location!");
+        }
     }
 
     /// <summary>
@@ -50,7 +78,21 @@ public class Maze
     /// </summary>
     public void MoveUp()
     {
-        // FILL IN CODE
+        if (_mazeMap.TryGetValue((_currX, _currY), out var directions))
+        {
+            if (directions[2]) // up is the third direction in the array
+            {
+                _currY--; // move up
+            }
+            else
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+        }
+        else
+        {
+            throw new InvalidOperationException("Invalid location!");
+        }
     }
 
     /// <summary>
@@ -59,7 +101,21 @@ public class Maze
     /// </summary>
     public void MoveDown()
     {
-        // FILL IN CODE
+        if (_mazeMap.TryGetValue((_currX, _currY), out var directions))
+        {
+            if (directions[3]) // down is the fourth direction in the array
+            {
+                _currY++; // move down
+            }
+            else
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+        }
+        else
+        {
+            throw new InvalidOperationException("Invalid location!");
+        }
     }
 
     public string GetStatus()
